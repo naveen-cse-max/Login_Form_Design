@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="hero">
+        <div class="outer-box">
+            <!-- Left -->
+            <div class="leftside">
+                <h1>Login & SignUp</h1>
+                <p>Page design by CyberKnights</p>
+                <a href="https://www.youtube.com/channel/UCifhdKB_Z7BrR1Rdeugku3g" target="_blank" class="youtube"><i class='bx bx-play-circle'></i> Watch Now</a>
+               
+                <div class="left-footer">
+                    <p><i class='bx bx-copyright' ></i> By Cyber Knights - 2023</p>
+                    <a href="https://www.linkedin.com/in/naveen-ganesh-459514244" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://instagram.com/naveen_03_offcl?igshid=OTk0YzhjMDVlZA==" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=919345805684&text&app_absent=0" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
+                </div>
+                
+            </div>   
+            <!-- Right -->
+            <div class="rightside">
+                <div class="user"><i class='bx bxs-user-circle'></i></div>
+                    <div class="button-box">
+                        <div id="btn"></div>
+                        
+                        <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                        <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                    </div>
+                    <!-- LOGIN -->
+                    <form class="input-group" id="login" method="#" name="login_form" >
+                        <input type="email" id="u_email" class="input-field" placeholder="Enter Email" required>
+
+                        <div id="error-email">*Email cannot be empty</div>
+
+                        <input type="password" id="u_pass" class="input-field" placeholder="Enter password" required>
+
+                        <div id="error-pass">*Password cannot be empty</div>
+
+                        <div class="new-user">
+                            <input type="checkbox" class="check-box"><span>Remember Me</span>
+                            <a href="#" onclick="register()"><i class='bx bx-user-plus'></i></a>
+                        </div>
+                        
+                        <a href="#"onclick="forgetbtn();" class="forget-pass">Forget Password?</a>
+                        <div id="msg"></div>
+                        <button type="submit" class="submit-btn" onclick="validate_login()">Login</button>
+                        
+                        <div id="forget-pass-msg">
+                            <input type="email" class="input-field" placeholder="Enter email">
+                            <div class="forget-btn-close-icon">
+                                <button>Get OTP</button>
+                            <i class='bx bx-x' id="icon-close" onclick="forgetclose();"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- REGISTER -->
+                    <form class="input-group" id="register" method="#" name="register_form">
+                        <div class="input-name">
+                            <input type="text" id="fname" class="input-field" placeholder="Firstname" required maxlength="25">
+                            <input type="text" id="lname" class="input-field" placeholder="Lastname" required maxlength="2">
+                        </div>
+                        <input type="email" id="u_regemail"class="input-field" placeholder="Enter Email" required>
+                        <input type="number" id="u_mobile" class="input-field" placeholder="Enter Mobile number" required>
+                        <input type="date" id="u_dob" class="input-field" required>
+                            <input type="radio" name="Gender" value="Male"><label>Male</label>
+                            <input type="radio" name="Gender" value="Female"><label>Female</label>
+                        <div class="input-pass">
+                            <input type="password" id="u_regpass" class="input-field" placeholder="Enter password" required>
+                            <input type="password" id="u_con_regpass"class="input-field" placeholder="Re-Enter password" required>
+                        </div>
+                        
+                        <div class="already-user">
+                            <input type="checkbox" class="check-box" required><span>I agree to terms and conditions</span>
+                            <a href="#" onclick="login()"><i class='bx bx-user-check'></i></a>
+                        </div>
+                            
+                        <button type="submit" class="submit-btn" id="reg-btn" onclick="validate_register()">Register</button>
+                    </form>
+            </div>
+        </div>    
+    </div>
+
+    <script>
+
+      
+         
+        var log=document.getElementById('login');
+        var reg=document.getElementById('register');
+        var btn=document.getElementById('btn');
+        login=()=>{
+            log.style.left="50px";
+            reg.style.left="450px";
+            btn.style.left="0px";
+            btn.style.background="rgba(224, 18, 228, 0.571)";
+            document.getElementById("register").reset();
+            //document.getElementById('msg').style='block';
+        }
+        register=()=>{
+            log.style.left="-450px";
+            reg.style.left="50px";
+            btn.style.left="110px";
+            btn.style.background="rgb(53, 204, 212)";
+            document.getElementById("login").reset();
+            document.getElementById('msg').style='none';
+        }
+       
+        
+
+        
+    </script>
+
+</body>
+</html>
